@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "py-algorithms"
+version = "0.1.0"
+description = "Fun with algorithms and data structures"
+authors = ["Pablo Barbero <pablo.barbero.domeno@gmail.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+pytest-cov = "^2.12.1"
+pytest-benchmark = "^3.4.1"
+flake8 = "^3.9.2"
+black = "^21.7b0"
+sphinx = "^4.1.2"
+recommonmark = "^0.7.1"
+sphinx-rtd-theme = "^0.5.2"
+isort = "^5.9.3"
+pydocstyle = "^6.1.1"
+sphinxcontrib-confluencebuilder = "^1.5.0"
+pre-commit = "^2.14.0"
+mypy = "^0.910"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
