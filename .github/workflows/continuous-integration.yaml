@@ -10,7 +10,7 @@ on:
 
 jobs:
   #
-  # CODE QUALITY
+  # CODE VULNERABILITIES
   #
   codeql:
     name: Analyze with CodeQL

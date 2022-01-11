@@ -18,7 +18,7 @@ check-types:
 
 .PHONY: check-docstrings
 check-docstrings:
-	poetry run pydocstyle --explain $(DIRS)
+	poetry run pydocstyle --convention=numpy --explain $(DIRS)
 
 .PHONY: check-format
 check-format:
