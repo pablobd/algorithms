@@ -6,7 +6,7 @@ authors = ["Pablo Barbero <pablo.barbero.domeno@gmail.com>"]
 license = "MIT License"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.8,<4.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
@@ -23,3 +23,21 @@ pre-commit = "^2.14.0"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ['py38', 'py39']
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+
+[tool.mypy]
+check_untyped_defs = true
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_configs = true
+warn_unused_ignores = true
+
+[tool.pydocstyle]
+inherit = false
+convention = "numpy"
