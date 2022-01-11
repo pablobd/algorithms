@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Default ignored files
+/.idea/*
+/.vscode/*
