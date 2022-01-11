@@ -23,7 +23,7 @@ check-docstrings:
 .PHONY: check-format
 check-format:
 	poetry run black --check --diff $(DIRS)
-	poetry run isort --check --diff $(DIRS)
+	poetry run isort --profile black --check --diff $(DIRS)
 
 .PHONY: check-spelling
 check-spelling:
