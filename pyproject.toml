@@ -18,6 +18,7 @@ black = "^20.8b1"
 isort = "^5.7.0"
 pydocstyle = "^6.1.1"
 pyspelling = "^2.7.3"
+pycln = "^1.1.0"
 pre-commit = "^2.14.0"
 
 [build-system]
@@ -41,3 +42,6 @@ warn_unused_ignores = true
 [tool.pydocstyle]
 inherit = false
 convention = "numpy"
+
+[tool.pycln]
+all = true

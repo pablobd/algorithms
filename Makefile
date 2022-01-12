@@ -18,12 +18,12 @@ check-types:
 
 .PHONY: check-docstrings
 check-docstrings:
-	poetry run pydocstyle --convention=numpy --explain $(DIRS)
+	poetry run pydocstyle --explain $(DIRS)
 
 .PHONY: check-format
 check-format:
 	poetry run black --check --diff $(DIRS)
-	poetry run isort --profile black --check --diff $(DIRS)
+	poetry run isort --check --diff $(DIRS)
 
 .PHONY: check-spelling
 check-spelling:
