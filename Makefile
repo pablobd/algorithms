@@ -1,4 +1,4 @@
-DIRS ?= examples/ tests/
+DIRS ?= solutions/ tests/
 
 .PHONY: install
 install:
