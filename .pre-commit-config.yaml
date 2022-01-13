@@ -17,14 +17,6 @@ repos:
       - id: detect-private-key
 
   #
-  # SPELL CHECKING
-  #
-  - repo: https://github.com/crate-ci/typos
-    rev: v1.3.4
-    hooks:
-      - id: typos
-
-  #
   # FINDING & REMOVING UNUSED IMPORTS
   #
   - repo: https://github.com/hadialqattan/pycln
