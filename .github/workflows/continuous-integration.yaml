@@ -135,7 +135,7 @@ jobs:
           sudo apt-get install aspell aspell-en
       - name: Poetry Install
         run: make install
-      - name: Verify the documentation portal can be built successfully
+      - name: Check spelling
         run: make check-spelling
 
   #
@@ -173,9 +173,9 @@ jobs:
       - name: Unit tests
         run: |
           make test
-      - uses: codecov/codecov-action@v2
-        with:
-          files: ./coverage.xml
-          fail_ci_if_error: true
-          env_vars: OS,PYTHON
-          verbose: true
+      # - uses: codecov/codecov-action@v2
+      #   with:
+      #     files: ./coverage.xml
+      #     fail_ci_if_error: true
+      #     env_vars: OS,PYTHON
+      #     verbose: true
