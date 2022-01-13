@@ -24,7 +24,7 @@ repos:
     hooks:
     - id: codespell
       # name: codespell
-      # description: Checks for common misspellings in text files.
+      description: Checks for common misspellings in text files.
       # entry: codespell --ignore-words ignore-spelling-words.txt readme.md code.py
       language: python
       types: [text]
