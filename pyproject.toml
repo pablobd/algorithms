@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-algorithms"
-version = "0.1.0"
+version = "0.0.0" # version handled by poetry-dynamic-versioning plugin
 description = "Fun with algorithms and data structures"
 authors = ["Pablo Barbero <pablo.barbero.domeno@gmail.com>"]
 license = "MIT License"
@@ -18,14 +18,21 @@ black = "^20.8b1"
 isort = "^5.7.0"
 pydocstyle = "^6.1.1"
 pyspelling = "^2.7.3"
+pycln = "^1.1.0"
 pre-commit = "^2.14.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+pattern = "^v(?P<base>\\d+\\.\\d+\\.\\d+)$"
+
 [tool.black]
-target-version = ['py38', 'py39']
+target-version = ['py38']
 
 [tool.isort]
 profile = "black"
@@ -41,3 +48,6 @@ warn_unused_ignores = true
 [tool.pydocstyle]
 inherit = false
 convention = "numpy"
+
+[tool.pycln]
+all = true
