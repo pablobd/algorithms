@@ -19,25 +19,15 @@ repos:
   #
   # SPELL CHECKING
   #
-  # - repo: https://github.com/hcodes/yaspeller.git
-  #   rev: v8.0.0
-  #   hooks:
-  #     - id: yaspeller
+  - repo: https://github.com/crate-ci/typos
+    rev: v1.3.4
+    hooks:
+      - id: typos
         # args: [--lang=en --file-extensions=.md]
   # - repo: https://github.com/hcodes/yaspeller.git
   #   rev: v8.0.0 # Use the sha / tag you want to point at
   #   hooks:
   #     - id: yaspeller
-  - repo: https://github.com/shellcheck-py/shellcheck-py
-    rev: v0.8.0.3
-    hooks:
-      - id: shellcheck
-        name: shellcheck
-        description: Test shell scripts with shellcheck
-        entry: shellcheck
-        language: python
-        types: [shell]
-        require_serial: true # shellcheck can detect sourcing this way
 
   #
   # FINDING & REMOVING UNUSED IMPORTS
