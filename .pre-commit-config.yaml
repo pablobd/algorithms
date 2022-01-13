@@ -23,11 +23,6 @@ repos:
     rev: v1.3.4
     hooks:
       - id: typos
-        # args: [--lang=en --file-extensions=.md]
-  # - repo: https://github.com/hcodes/yaspeller.git
-  #   rev: v8.0.0 # Use the sha / tag you want to point at
-  #   hooks:
-  #     - id: yaspeller
 
   #
   # FINDING & REMOVING UNUSED IMPORTS
