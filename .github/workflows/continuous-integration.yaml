@@ -114,7 +114,7 @@ jobs:
   # SPELLCHECKING AND TYPOS
   #
   spellcheck:
-    name: Spellchecking
+    name: Spellchecking (markdown)
     runs-on: ubuntu-latest
     env:
       PYTHON: 3.9.6
@@ -142,7 +142,7 @@ jobs:
   # TEST SUITE
   #
   test:
-    name: Test Suite
+    name: Test Suite and Coverage (>98%)
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
