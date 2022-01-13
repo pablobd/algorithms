@@ -19,11 +19,15 @@ repos:
   #
   # FINDING & REMOVING UNUSED IMPORTS
   #
-  # - repo: https://github.com/facelessuser/pyspelling
-  #   rev: 2.7.3
-  #   hooks:
-  #   -   id: pyspell
-  #       args: [--config=pyproject.toml]
+  - repo: https://github.com/codespell-project/codespell
+    rev: v1.16.0
+    hooks:
+    - id: codespell
+      # name: codespell
+      # description: Checks for common misspellings in text files.
+      # entry: codespell --ignore-words ignore-spelling-words.txt readme.md code.py
+      # language: python
+      # types: [text]
 
   #
   # FINDING & REMOVING UNUSED IMPORTS
