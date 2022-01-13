@@ -2,7 +2,9 @@
 Fun with algorithms and data structures
 
 ![Python Versions Supported](https://img.shields.io/badge/python-3.8+-blue.svg)
+[![Continuous Integration](https://github.com/pablobd/algorithms/actions/workflows/code-vulnerabilities.yaml/badge.svg)](https://github.com/pablobd/algorithms/actions/workflows/code-vulnerabilities.yaml)
 [![Pre-Commit](https://github.com/pablobd/algorithms/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/pablobd/algorithms/actions/workflows/pre-commit.yaml)
 [![Continuous Integration](https://github.com/pablobd/algorithms/actions/workflows/continuous-integration.yaml/badge.svg)](https://github.com/pablobd/algorithms/actions/workflows/continuous-integration.yaml)
+
 
 ---
