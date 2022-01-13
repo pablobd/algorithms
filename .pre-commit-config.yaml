@@ -26,8 +26,8 @@ repos:
       # name: codespell
       # description: Checks for common misspellings in text files.
       # entry: codespell --ignore-words ignore-spelling-words.txt readme.md code.py
-      # language: python
-      # types: [text]
+      language: python
+      types: [text]
 
   #
   # FINDING & REMOVING UNUSED IMPORTS
