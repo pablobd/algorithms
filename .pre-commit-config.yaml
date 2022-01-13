@@ -16,17 +16,6 @@ repos:
       - id: detect-private-key
 
   #
-  # PYTHON CODE VULNERABILITIES
-  #
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-bandit
-    name: Python code vulnerabilities checker
-    rev: v1.0.5
-    hooks:
-      - id: python-bandit-vulnerability-check
-        args: [--verbose]
-        files: .py$
-
-  #
   # FINDING & REMOVING UNUSED IMPORTS
   #
   - repo: https://github.com/hadialqattan/pycln
