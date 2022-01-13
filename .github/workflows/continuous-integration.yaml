@@ -89,7 +89,7 @@ jobs:
   # CODE-LEVEL DOCUMENTATION (DOCSTRINGS)
   #
   code-documentation:
-    name: Code Documentation (docstrings)
+    name: Docstrings (numpy convention)
     runs-on: ubuntu-latest
     env:
       PYTHON: 3.9.6
@@ -142,7 +142,7 @@ jobs:
   # TEST SUITE
   #
   test:
-    name: Test Suite and Coverage (>98%)
+    name: Test Suite & Coverage (>98%)
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
