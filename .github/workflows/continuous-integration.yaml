@@ -33,82 +33,6 @@ jobs:
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
 
-  #
-  # LINTING
-  #
-  lint:
-    name: Lint and Check type system
-    runs-on: ubuntu-latest
-    env:
-      PYTHON: 3.9.6
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ env.PYTHON }}
-      - uses: Gr1N/setup-poetry@v7
-        with:
-          poetry-version: 1.1.5
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pypoetry/virtualenvs
-          key: ${{ runner.os }}-${{ env.PYTHON}}-poetry-${{ hashFiles('poetry.lock') }}
-      - name: Install dependencies
-        run: make install
-      - name: Lint
-        run: make lint
-      - name: Check types
-        run: make check-types
-
-  #
-  # CODE FORMATTING
-  #
-  code-format:
-    name: Standard Code Formatting
-    runs-on: ubuntu-latest
-    env:
-      PYTHON: 3.9.6
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ env.PYTHON }}
-      - uses: Gr1N/setup-poetry@v7
-        with:
-          poetry-version: 1.1.5
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pypoetry/virtualenvs
-          key: ${{ runner.os }}-${{ env.PYTHON}}-poetry-${{ hashFiles('poetry.lock') }}
-      - name: Install dependencies
-        run: make install
-      - name: Verify code format
-        run: make check-format
-
-  #
-  # CODE-LEVEL DOCUMENTATION (DOCSTRINGS)
-  #
-  code-documentation:
-    name: Docstrings (numpy convention)
-    runs-on: ubuntu-latest
-    env:
-      PYTHON: 3.9.6
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: ${{ env.PYTHON }}
-      - uses: Gr1N/setup-poetry@v7
-        with:
-          poetry-version: 1.1.5
-      - uses: actions/cache@v2
-        with:
-          path: ~/.cache/pypoetry/virtualenvs
-          key: ${{ runner.os }}-${{ env.PYTHON}}-poetry-${{ hashFiles('poetry.lock') }}
-      - name: Poetry Install
-        run: make install
-      - name: Verify docstring documentation is standardized
-        run: make check-docstrings
 
   #
   # SPELLCHECKING AND TYPOS
@@ -134,9 +58,9 @@ jobs:
         run: |
           sudo apt-get install aspell aspell-en
       - name: Poetry Install
-        run: make install
+        run: poetry install
       - name: Check spelling
-        run: make check-spelling
+        run: poetry run pyspelling
 
   #
   # TEST SUITE
@@ -169,7 +93,7 @@ jobs:
           key: ${{ runner.os }}-${{ matrix.python }}-poetry-${{ hashFiles('poetry.lock') }}
       - name: Install dependencies
         run: |
-          make install
+          poetry install
       - name: Unit tests
         run: |
-          make test
+          poetry run pytest --cov=solutions --cov-fail-under=98 --cov-report=xml tests/
