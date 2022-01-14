@@ -11,7 +11,7 @@ Fun with algorithms and data structures
 
 ## Project Objective
 
-Have fun and learn about algorithmics and data structures.
+Have fun, learn about algorithms and data structures and build the fastest and cleanest algorithms from far west.
 
 
 ## Local Development
