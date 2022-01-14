@@ -12,6 +12,7 @@ repos:
       - id: trailing-whitespace
       - id: mixed-line-ending
       - id: name-tests-test
+        name: Tests match `test*.py`
         args: ['--django']
       - id: detect-private-key
 
