@@ -20,6 +20,7 @@ repos:
   # FINDING & REMOVING UNUSED IMPORTS
   #
   - repo: https://github.com/hadialqattan/pycln
+    name: Remove unused imports
     rev: v1.1.0
     hooks:
       - id: pycln
@@ -29,6 +30,7 @@ repos:
   # DOCSTRINGS FOLLOWING NUMPY CONVENTION
   #
   - repo: https://github.com/pycqa/pydocstyle
+    name: Docstrings (numpy convention)
     rev: 6.1.1
     hooks:
       - id: pydocstyle
@@ -39,6 +41,7 @@ repos:
   # TYPING
   #
   - repo: https://github.com/pre-commit/mirrors-mypy
+    name: Typing (mypy)
     rev: v0.790
     hooks:
       - id: mypy
@@ -48,6 +51,7 @@ repos:
   # SORTING IMPORTS A LA BLACK
   #
   - repo: https://github.com/timothycrosley/isort
+    name: isort (black config)
     rev: 5.6.4
     hooks:
       - id: isort
