@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Test Suite
 
 on:
   push:
