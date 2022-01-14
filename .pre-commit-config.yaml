@@ -4,48 +4,70 @@ repos:
     rev: v3.3.0
     hooks:
       - id: check-ast
-      - id: fix-byte-order-marker
       - id: check-case-conflict
-      - id: check-docstring-first
-      - id: check-executables-have-shebangs
       - id: check-json
       - id: check-toml
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: mixed-line-ending
+      - id: name-tests-test
+        name: Tests match 'test*.py'
+        args: ['--django']
       - id: detect-private-key
 
+  #
+  # FINDING & REMOVING UNUSED IMPORTS
+  #
   - repo: https://github.com/hadialqattan/pycln
     rev: v1.1.0
     hooks:
-    -   id: pycln
+      - id: pycln
+        name: Remove unused imports
         args: [--config=pyproject.toml]
 
+  #
+  # DOCSTRINGS FOLLOWING NUMPY CONVENTION
+  #
   - repo: https://github.com/pycqa/pydocstyle
     rev: 6.1.1
     hooks:
-    -   id: pydocstyle
+      - id: pydocstyle
+        name: Docstrings (numpy convention)
         additional_dependencies: [toml]
         exclude: (?!test_).*\.py
 
+  #
+  # TYPING
+  #
   - repo: https://github.com/pre-commit/mirrors-mypy
     rev: v0.790
     hooks:
       - id: mypy
+        name: Typing (mypy)
         args: [--ignore-missing-imports]
 
+  #
+  # SORTING IMPORTS A LA BLACK
+  #
   - repo: https://github.com/timothycrosley/isort
     rev: 5.6.4
     hooks:
       - id: isort
+        name: isort (black config)
         additional_dependencies: [toml]
 
+  #
+  # FORMATTING CODE WITH BLACK
+  #
   - repo: https://github.com/psf/black
     rev: 20.8b1
     hooks:
       - id: black
 
+  #
+  # LINTING WITH FLAKE8
+  #
   - repo: https://gitlab.com/pycqa/flake8
     rev: 3.8.4
     hooks:
