@@ -19,8 +19,7 @@ def brute_force_solution(numbers: List[int]) -> int:
     max_pairwise_product: int = 0
 
     for i, n in enumerate(numbers):
-        residual_numbers = numbers[:i] + numbers[i + 1 :]
-        for k in residual_numbers:
+        for k in numbers[i + 1 :]:
             product = n * k
             if max_pairwise_product < product:
                 max_pairwise_product = product
