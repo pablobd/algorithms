@@ -9,7 +9,7 @@ from tests.measure_performance import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
 """ Performance tests show that the efficient solution is a 100 times faster for
-two numbers between 1000 and 1100.
+two numbers between 2000 and 2100.
 """
 
 

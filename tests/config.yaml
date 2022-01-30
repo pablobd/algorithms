@@ -61,12 +61,12 @@ greatest_common_divisor:
       biggest_number: 200
       test_iterations: 10
     big_tests:
-      smallest_number: 100
-      biggest_number: 1000
-      test_iterations: 1000
-    performance:
       smallest_number: 1000
-      biggest_number: 1100
+      biggest_number: 2000
+      test_iterations: 100
+    performance:
+      smallest_number: 2000
+      biggest_number: 2100
       test_iterations: 10
   performance_tests:
     repeat_performance_tests_per_input: 3
