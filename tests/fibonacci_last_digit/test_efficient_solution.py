@@ -8,7 +8,7 @@ from tests.fibonacci_last_digit import StressTestsParams
 from tests.measure_performance import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
-""" Performance tests show that the efficient solution takes 5 times less time for
+""" Performance tests show that the efficient solution is 5 times faster for
 fibonacci number 400000.
 """
 

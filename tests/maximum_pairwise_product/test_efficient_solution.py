@@ -8,7 +8,7 @@ from tests.maximum_pairwise_product import StressTestsParams
 from tests.measure_performance import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
-""" Performance tests show that the efficient solution takes 100 times less time for
+""" Performance tests show that the efficient solution is a 100 times faster for
 input sequences of length 1000.
 """
 

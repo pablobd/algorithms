@@ -66,9 +66,9 @@ greatest_common_divisor:
       test_iterations: 1000
     performance:
       smallest_number: 1000
-      biggest_number: 1001
-      test_iterations: 1
+      biggest_number: 1100
+      test_iterations: 10
   performance_tests:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
-    times_faster_efficient_to_brute_force: 5
+    times_faster_efficient_to_brute_force: 100
