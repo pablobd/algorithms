@@ -1,49 +1,34 @@
 import random
-import timeit
-from dataclasses import dataclass
-from typing import Callable, List
+from typing import List
 
 import pytest
 
 from solutions import maximum_pairwise_product
+from tests.maximum_pairwise_product import StressTestsParams
+from tests.measure_performance import PerformanceMeasures
+from tests.read_config import get_names, read_config
 
 """ Performance tests show that the efficient solution takes 100 times less time for
 input sequences of length 1000.
 """
 
 #
-# prepare tests
+# get test parameters
 #
 
 
-@dataclass
-class PerformanceMeasuresParams:
-    __test__ = False  # Will not be discovered as a test
-
-    repeat_performance_tests_per_input: int = 5
-    number_performance_tests_per_input: int = 10
-    times_faster_efficient_to_brute_force: float = 1e2
+names = ["maximum_pairwise_product", "stress_tests"]
+small_tests_params = read_config(StressTestsParams, get_names(names, "small_tests"))
+big_tests_params = read_config(StressTestsParams, get_names(names, "big_tests"))
+performance_params = read_config(StressTestsParams, get_names(names, "performance"))
 
 
-@dataclass
-class TestParams:
-    __test__ = False  # Will not be discovered as a test
-
-    max_sequence_len: int
-    max_number_in_sequence: int
-    test_iterations: int
-    min_sequence_len: int = 2
-    min_number_in_sequence: int = 1
-    seed: int = 123
+#
+# parametrize test inputs
+#
 
 
-small_tests_params = TestParams(5, 10, 100)
-large_tests_params = TestParams(100, 1000, 1000)
-performance_tests_params = TestParams(1000, 100, 5, 999, 10)
-performance_measures_params = PerformanceMeasuresParams()
-
-
-def generate_input_data(params: TestParams) -> List[List[int]]:
+def sample_input_sequence(params: StressTestsParams) -> List[List[int]]:
     random.seed(params.seed)
     test_cases = []
     for _ in range(params.test_iterations):
@@ -58,17 +43,17 @@ def generate_input_data(params: TestParams) -> List[List[int]]:
 #
 
 
-@pytest.mark.parametrize("input_data", generate_input_data(small_tests_params))
-def test_stress_tests_small_numbers(input_data) -> None:
-    brute_force = maximum_pairwise_product.brute_force_solution(input_data)
-    efficient = maximum_pairwise_product.efficient_solution(input_data)
+@pytest.mark.parametrize("input_sequence", sample_input_sequence(small_tests_params))
+def test_stress_tests_small_numbers(input_sequence) -> None:
+    brute_force = maximum_pairwise_product.brute_force_solution(input_sequence)
+    efficient = maximum_pairwise_product.efficient_solution(input_sequence)
     assert brute_force == efficient
 
 
-@pytest.mark.parametrize("input_data", generate_input_data(large_tests_params))
-def test_stress_tests_large_numbers(input_data) -> None:
-    brute_force = maximum_pairwise_product.brute_force_solution(input_data)
-    efficient = maximum_pairwise_product.efficient_solution(input_data)
+@pytest.mark.parametrize("input_sequence", sample_input_sequence(big_tests_params))
+def test_stress_tests_large_numbers(input_sequence) -> None:
+    brute_force = maximum_pairwise_product.brute_force_solution(input_sequence)
+    efficient = maximum_pairwise_product.efficient_solution(input_sequence)
     assert brute_force == efficient
 
 
@@ -77,36 +62,20 @@ def test_stress_tests_large_numbers(input_data) -> None:
 #
 
 
-@pytest.mark.parametrize("input_data", generate_input_data(performance_tests_params))
-def test_performance(input_data) -> None:
-
-    brute_force_time = _measure_performance(
+@pytest.mark.parametrize("input_sequence", sample_input_sequence(performance_params))
+def test_performance(input_sequence) -> None:
+    config_names = ["maximum_pairwise_product", "performance_tests"]
+    performance_measures = read_config(PerformanceMeasures, config_names)
+    brute_force_time = performance_measures.measure_performance(
         maximum_pairwise_product.brute_force_solution,
-        input_data,
-        performance_measures_params,
+        input_sequence,
     )
 
-    efficient_time = _measure_performance(
+    efficient_time = performance_measures.measure_performance(
         maximum_pairwise_product.efficient_solution,
-        input_data,
-        performance_measures_params,
+        input_sequence,
     )
 
     # The efficient solution takes 100 times less for sequences of length 1000
-    times_faster = performance_measures_params.times_faster_efficient_to_brute_force
+    times_faster = performance_measures.times_faster_efficient_to_brute_force
     assert times_faster * efficient_time < brute_force_time
-
-
-def _measure_performance(
-    func: Callable[[List[int]], int],
-    input_data: List[int],
-    performance_measures_params: PerformanceMeasuresParams,
-) -> float:
-    repeat_param = performance_measures_params.repeat_performance_tests_per_input
-    number_param = performance_measures_params.number_performance_tests_per_input
-    t = timeit.Timer(lambda: func(input_data))
-    time_list = t.repeat(repeat_param, number_param)
-    # higher values in the result vector are typically not caused by variability in Python's speed,
-    # but by other processes interfering with your timing accuracy
-    time = min(time_list)
-    return time

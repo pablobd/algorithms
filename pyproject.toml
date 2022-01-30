@@ -19,6 +19,7 @@ pydocstyle = "^6.1.1"
 pyspelling = "^2.7.3"
 pycln = "^1.1.0"
 pre-commit = "^2.14.0"
+types-PyYAML = "^6.0.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
