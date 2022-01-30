@@ -5,7 +5,7 @@ import pytest
 
 from solutions import fibonacci_last_digit
 from tests.fibonacci_last_digit import StressTestsParams
-from tests.measure_performance import PerformanceMeasures
+from tests.performance_measures import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
 """ Performance tests show that the efficient solution is 5 times faster for
