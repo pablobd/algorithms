@@ -14,6 +14,7 @@ repos:
       - id: name-tests-test
         name: Tests match 'test*.py'
         args: ['--django']
+        exclude: ^(tests/measure_performance.py|tests/read_config.py|tests/.*params.py)
       - id: detect-private-key
 
   #

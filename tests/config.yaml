@@ -1,0 +1,38 @@
+maximum_pairwise_product:
+  stress_tests:
+    small_tests:
+      max_sequence_len: 5
+      max_number_in_sequence: 10
+      test_iterations: 100
+    big_tests:
+      max_sequence_len: 100
+      max_number_in_sequence: 100
+      test_iterations: 1000
+    performance:
+      max_sequence_len: 1000
+      max_number_in_sequence: 100
+      test_iterations: 5
+      min_sequence_len: 999
+      min_number_in_sequence: 10
+  performance_tests:
+    repeat_performance_tests_per_input: 5
+    number_performance_tests_per_input: 10
+    times_faster_efficient_to_brute_force: 100
+fibonacci_numbers:
+  stress_tests:
+    small_tests:
+      min_fibonacci_number: 7
+      max_fibonacci_number: 15
+      test_iterations: 3
+    big_tests:
+      min_fibonacci_number: 15
+      max_fibonacci_number: 30
+      test_iterations: 10
+    performance:
+      min_fibonacci_number: 29
+      max_fibonacci_number: 30
+      test_iterations: 1
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 6
+    times_faster_efficient_to_brute_force: 10000
