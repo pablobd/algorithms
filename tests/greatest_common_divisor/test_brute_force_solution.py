@@ -1,7 +1,7 @@
 from solutions import greatest_common_divisor
 
 
-def test_brute_force_solution():
+def test_brute_force_solution_simple_cases():
     assert greatest_common_divisor.efficient_solution((1, 1)) == 1
     assert greatest_common_divisor.efficient_solution((1, 2)) == 1
     assert greatest_common_divisor.efficient_solution((2, 2)) == 2

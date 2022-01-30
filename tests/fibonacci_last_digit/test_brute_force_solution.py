@@ -1,7 +1,7 @@
 from solutions import fibonacci_last_digit
 
 
-def test_brute_force_manual():
+def test_brute_force_solution_simple_cases():
     assert 0 == fibonacci_last_digit.brute_force_solution(0)
     assert 1 == fibonacci_last_digit.brute_force_solution(1)
     assert 1 == fibonacci_last_digit.brute_force_solution(2)
