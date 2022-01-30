@@ -8,8 +8,8 @@ from tests.fibonacci_numbers.stress_tests_params import StressTestsParams
 from tests.measure_performance import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
-""" Performance tests show that the efficient solution takes 100 times less time for
-input sequences of length 1000.
+""" Performance tests show that the efficient solution takes 10000 times less time for
+fibonacci number 30.
 """
 
 
@@ -89,6 +89,6 @@ def test_performance(input_fibonacci) -> None:
         input_fibonacci,
     )
 
-    # The efficient solution takes 100 times less for inputs between 30 and 40
+    # The efficient solution takes 10000 times less for fibonacci number 30
     times_faster = performance_measures.times_faster_efficient_to_brute_force
     assert times_faster * efficient_time < brute_force_time
