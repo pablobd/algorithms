@@ -17,7 +17,7 @@ fibonacci number 400000.
 #
 
 
-def test_efficient_solution_manual():
+def test_efficient_solution_simple_cases():
     assert 0 == fibonacci_last_digit.efficient_solution(0)
     assert 1 == fibonacci_last_digit.efficient_solution(1)
     assert 1 == fibonacci_last_digit.efficient_solution(2)
