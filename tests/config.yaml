@@ -36,3 +36,39 @@ fibonacci_numbers:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 6
     times_faster_efficient_to_brute_force: 10000
+fibonacci_last_digit:
+  stress_tests:
+    small_tests:
+      min_fibonacci_number: 7
+      max_fibonacci_number: 100
+      test_iterations: 10
+    big_tests:
+      min_fibonacci_number: 100000
+      max_fibonacci_number: 110000
+      test_iterations: 100
+    performance:
+      min_fibonacci_number: 400000
+      max_fibonacci_number: 400001
+      test_iterations: 1
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 5
+greatest_common_divisor:
+  stress_tests:
+    small_tests:
+      smallest_number: 100
+      biggest_number: 200
+      test_iterations: 10
+    big_tests:
+      smallest_number: 1000
+      biggest_number: 2000
+      test_iterations: 100
+    performance:
+      smallest_number: 2000
+      biggest_number: 2100
+      test_iterations: 10
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 100
