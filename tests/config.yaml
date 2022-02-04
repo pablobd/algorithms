@@ -90,3 +90,27 @@ least_common_multiple:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
     times_faster_efficient_to_brute_force: 100
+modulus_huge_fibonacci:
+  stress_tests:
+    small_tests:
+      min_fibonacci_number: 7
+      max_fibonacci_number: 100
+      min_modulus: 2
+      max_modulus: 10
+      test_iterations: 10
+    big_tests:
+      min_fibonacci_number: 100000
+      max_fibonacci_number: 110000
+      min_modulus: 10
+      max_modulus: 100
+      test_iterations: 100
+    performance:
+      min_fibonacci_number: 400000
+      max_fibonacci_number: 400020
+      min_modulus: 10
+      max_modulus: 100
+      test_iterations: 4
+  performance_tests:
+    repeat_performance_tests_per_input: 2
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 25
