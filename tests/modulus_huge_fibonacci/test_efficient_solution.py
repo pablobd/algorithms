@@ -4,9 +4,34 @@ from typing import List, Tuple
 import pytest
 
 from solutions import modulus_huge_fibonacci
+from solutions.modulus_huge_fibonacci.efficient_solution import _get_pisano_period
 from tests.modulus_huge_fibonacci.stress_tests_params import StressTestsParams
 from tests.performance_measures import PerformanceMeasures
 from tests.read_config import get_names, read_config
+
+""" Performance tests show that the efficient solution is a 100000 times faster for
+two numbers between 400000 and 400020.
+"""
+
+#
+# Pisano Period simple cases tests
+#
+
+
+def test_get_pisano_period_simple_cases():
+    assert 1 == _get_pisano_period(1)
+    assert 3 == _get_pisano_period(2)
+    assert 8 == _get_pisano_period(3)
+    assert 6 == _get_pisano_period(4)
+    assert 20 == _get_pisano_period(5)
+    assert 24 == _get_pisano_period(6)
+    assert 16 == _get_pisano_period(7)
+    assert 12 == _get_pisano_period(8)
+    assert 24 == _get_pisano_period(9)
+    assert 60 == _get_pisano_period(10)
+    assert 10 == _get_pisano_period(11)
+    assert 24 == _get_pisano_period(12)
+
 
 #
 # simple cases tests
@@ -14,7 +39,7 @@ from tests.read_config import get_names, read_config
 
 
 @pytest.mark.parametrize("mod", [1, 2, 3, 4, 5, 6])
-def test_efficient_solution_simple_cases(mod):
+def test_efficient_solution_simple_cases(mod: int):
     assert 0 % mod == modulus_huge_fibonacci.efficient_solution((0, mod))
     assert 1 % mod == modulus_huge_fibonacci.efficient_solution((1, mod))
     assert 1 % mod == modulus_huge_fibonacci.efficient_solution((2, mod))
@@ -82,6 +107,7 @@ def test_stress_tests_efficient_solution_big_stress(input_fibonacci):
 def test_performance(input_fibonacci) -> None:
     config_names = ["modulus_huge_fibonacci", "performance_tests"]
     performance_measures = read_config(PerformanceMeasures, config_names)
+
     brute_force_time = performance_measures.measure_performance(
         modulus_huge_fibonacci.brute_force_solution,
         input_fibonacci,

@@ -109,8 +109,8 @@ modulus_huge_fibonacci:
       max_fibonacci_number: 400020
       min_modulus: 10
       max_modulus: 100
-      test_iterations: 4
+      test_iterations: 3
   performance_tests:
     repeat_performance_tests_per_input: 2
     number_performance_tests_per_input: 5
-    times_faster_efficient_to_brute_force: 25
+    times_faster_efficient_to_brute_force: 100000
