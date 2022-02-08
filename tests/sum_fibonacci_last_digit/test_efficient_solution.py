@@ -8,6 +8,10 @@ from tests.performance_measures import PerformanceMeasures
 from tests.read_config import get_names, read_config
 from tests.sum_fibonacci_last_digit.stress_tests_params import StressTestsParams
 
+""" Performance tests show that the efficient solution is a 50 times faster for
+two numbers between 40000 and 40020.
+"""
+
 #
 # simple cases tests
 #

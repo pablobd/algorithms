@@ -126,9 +126,9 @@ sum_fibonacci_last_digit:
       test_iterations: 100
     performance:
       min_fibonacci_number: 40000
-      max_fibonacci_number: 40001
-      test_iterations: 1
+      max_fibonacci_number: 40020
+      test_iterations: 3
   performance_tests:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
-    times_faster_efficient_to_brute_force: 100
+    times_faster_efficient_to_brute_force: 50
