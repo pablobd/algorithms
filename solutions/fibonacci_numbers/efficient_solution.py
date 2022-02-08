@@ -1,12 +1,11 @@
 def efficient_solution(n: int) -> int:
-    if n == 0:
-        return 0
+    if n <= 1:
+        return n
 
-    numbers = []
-    for k in range(0, n + 1):
-        if k <= 1:
-            numbers.append(k)
-        else:
-            numbers.append(numbers[k - 1] + numbers[k - 2])
+    previous = 0
+    current = 1
 
-    return numbers[-1]
+    for _ in range(n - 1):
+        previous, current = current, previous + current
+
+    return current
