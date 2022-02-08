@@ -9,7 +9,7 @@ from tests.modulus_huge_fibonacci.stress_tests_params import StressTestsParams
 from tests.performance_measures import PerformanceMeasures
 from tests.read_config import get_names, read_config
 
-""" Performance tests show that the efficient solution is a 100 times faster for
+""" Performance tests show that the efficient solution is a 1000 times faster for
 two numbers between 400000 and 400020.
 """
 
