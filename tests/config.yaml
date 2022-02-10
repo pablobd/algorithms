@@ -131,4 +131,28 @@ sum_fibonacci_last_digit:
   performance_tests:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
-    times_faster_efficient_to_brute_force: 50
+    times_faster_efficient_to_brute_force: 10000
+partial_sum_fibonacci_last_digit:
+  stress_tests:
+    small_tests:
+      high_min_fibonacci_number: 20
+      high_max_fibonacci_number: 100
+      low_min_fibonacci_number: 0
+      low_max_fibonacci_number: 20
+      test_iterations: 10
+    big_tests:
+      high_min_fibonacci_number: 20000
+      high_max_fibonacci_number: 30000
+      low_min_fibonacci_number: 10000
+      low_max_fibonacci_number: 20000
+      test_iterations: 10
+    performance:
+      high_min_fibonacci_number: 40000
+      high_max_fibonacci_number: 41000
+      low_min_fibonacci_number: 30000
+      low_max_fibonacci_number: 31000
+      test_iterations: 3
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 1000
