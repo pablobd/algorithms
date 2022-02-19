@@ -1,4 +1,18 @@
 def efficient_solution(n: int) -> int:
+    """Compute the n fibonacci number computed in a more efficient way.
+
+    The solution is T(n) = O(n) time complexity and S(n) = O(1)
+
+    Parameters
+    ----------
+    n : int
+        The fibonacci number to compute.
+
+    Returns
+    -------
+    int
+        The fibonacci number computed efficiently.
+    """
     if n <= 1:
         return n
 

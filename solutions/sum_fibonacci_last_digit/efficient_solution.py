@@ -1,4 +1,4 @@
-from solutions import modulus_huge_fibonacci
+from solutions import modulo_huge_fibonacci
 
 
 def efficient_solution(n: int) -> int:
@@ -15,6 +15,10 @@ def efficient_solution(n: int) -> int:
         F(1)   = F(3)   - F(2)
     So, The sum F(1) + ... + F(n) = F(n+2) - 1
 
+    Also since the last digit means taking the modulo 10, and taking the modulo of a
+    Fibonacci number has a time complexity of O(m), where m is the modulo; we conclude
+    the time complexity is contant, i.e. O(1). The space complexity is also constant.
+
     Parameters
     ----------
     n : int
@@ -27,5 +31,5 @@ def efficient_solution(n: int) -> int:
     """
     if n <= 2:
         return n
-    sum_n = modulus_huge_fibonacci.efficient_solution((n + 2, 10)) - 1
+    sum_n = modulo_huge_fibonacci.efficient_solution((n + 2, 10)) - 1
     return sum_n % 10

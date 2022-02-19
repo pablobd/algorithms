@@ -48,3 +48,10 @@ def test_raise_value_error_both_numbers_zero():
     with pytest.raises(ValueError) as e:
         least_common_multiple.brute_force_solution((0, 0))
     assert str(e.value) == "Both numbers are negative or zero"
+
+
+def test_raise_value_error_first_number_negative_seconds_zero():
+
+    with pytest.raises(ValueError) as e:
+        least_common_multiple.brute_force_solution((-5, 0))
+    assert str(e.value) == "Both numbers are negative or zero"

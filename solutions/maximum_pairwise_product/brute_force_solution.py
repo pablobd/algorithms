@@ -4,7 +4,10 @@ from typing import List
 
 
 def brute_force_solution(numbers: List[int]) -> int:
-    """Brute force solution to maximum pairwise product problem.
+    """Compute the maximum pairwise product of a sequence of integers with a brute force
+    solution.
+
+    The time and space complexities are O(n^2) and O(1).
 
     Parameters
     ----------
