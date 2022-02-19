@@ -2,6 +2,21 @@ from typing import List
 
 
 def efficient_solution(x: List[int]) -> int:
+    """Compute the maximum pairwise product of a sequence of integers with an efficient
+    solution.
+
+    The time and space complexities are O(n) and O(1).
+
+    Parameters
+    ----------
+    numbers : List[int]
+        List of positive integers
+
+    Returns
+    -------
+    int
+        The product that is maximum among all pairs
+    """
     first_max = 0
     index_first_max = 0
     for i, n in enumerate(x):

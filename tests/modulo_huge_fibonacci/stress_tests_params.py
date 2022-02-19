@@ -7,7 +7,7 @@ from tests.read_config import Config
 class StressTestsParams(Config):
     max_fibonacci_number: int
     min_fibonacci_number: int
-    min_modulus: int
-    max_modulus: int
+    min_modulo: int
+    max_modulo: int
     test_iterations: int
     seed: int = 123
