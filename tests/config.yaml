@@ -174,3 +174,21 @@ fibonacci_sum_squares_last_digit:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
     times_faster_efficient_to_brute_force: 1000
+coin_change:
+  stress_tests:
+    small_tests:
+      max_number: 30
+      min_number: 10
+      test_iterations: 10
+    big_tests:
+      max_number: 50
+      min_number: 30
+      test_iterations: 15
+    performance:
+      max_number: 50
+      min_number: 45
+      test_iterations: 3
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 100000
