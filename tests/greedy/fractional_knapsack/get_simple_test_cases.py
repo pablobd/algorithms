@@ -3,7 +3,7 @@ from typing import List, Sequence, Tuple
 from solutions.greedy.fractional_knapsack import Item
 
 
-def get_simple_cases() -> Sequence[Tuple[int, int, List[Item], float]]:
+def get_simple_test_cases() -> Sequence[Tuple[int, int, List[Item], float]]:
     cases = []
     items = [
         Item(value=60, weight=20),

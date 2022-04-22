@@ -4,10 +4,10 @@ import pytest
 
 from solutions.greedy import fractional_knapsack
 from solutions.greedy.fractional_knapsack import Item
-from tests.greedy.fractional_knapsack.get_simple_cases import get_simple_cases
+from tests.greedy.fractional_knapsack.get_simple_test_cases import get_simple_test_cases
 
 
-@pytest.mark.parametrize("input_fractional_knapsack", get_simple_cases())
+@pytest.mark.parametrize("input_fractional_knapsack", get_simple_test_cases())
 def test_brute_force_solution_simple_cases(
     input_fractional_knapsack: Tuple[int, int, List[Item], float]
 ):
