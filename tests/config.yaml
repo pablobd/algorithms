@@ -192,3 +192,39 @@ coin_change:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
     times_faster_efficient_to_brute_force: 100000
+fractional_knapsack:
+  stress_tests:
+    small_tests:
+      min_num_items: 1
+      max_num_items: 4
+      max_value: 200
+      min_value: 10
+      max_weight: 20
+      min_weight: 10
+      max_capacity: 100
+      min_capacity: 10
+      test_iterations: 10
+    big_tests:
+      min_num_items: 1
+      max_num_items: 4
+      max_value: 200
+      min_value: 10
+      max_weight: 20
+      min_weight: 10
+      max_capacity: 100
+      min_capacity: 10
+      test_iterations: 20
+    performance:
+      min_num_items: 3
+      max_num_items: 4
+      max_value: 200
+      min_value: 10
+      max_weight: 20
+      min_weight: 10
+      max_capacity: 100
+      min_capacity: 10
+      test_iterations: 5
+  performance_tests:
+    repeat_performance_tests_per_input: 3
+    number_performance_tests_per_input: 5
+    times_faster_efficient_to_brute_force: 1000
