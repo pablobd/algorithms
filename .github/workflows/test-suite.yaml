@@ -40,7 +40,7 @@ jobs:
           poetry install
       - name: Unit tests
         run: |
-          poetry run pytest --cov=solutions --cov-fail-under=98 --cov-report=xml tests/
+          poetry run pytest --cov=solutions --cov-fail-under=95 --cov-report=xml tests/
       - name: "Upload coverage to Codecov"
         uses: codecov/codecov-action@v2
         with:
