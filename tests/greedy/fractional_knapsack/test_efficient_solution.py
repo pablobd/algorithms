@@ -70,7 +70,9 @@ def sample_input_fractional_knapsack(
 @pytest.mark.parametrize(
     "input_fractional_knapsack", sample_input_fractional_knapsack(small_tests_params)
 )
-def test_stress_tests_efficient_solution_small_stress(input_fractional_knapsack):
+def test_stress_tests_efficient_solution_small_stress(
+    input_fractional_knapsack: Tuple[int, int, List[Item]]
+) -> None:
     input_fractional_knapsack_copy = copy.deepcopy(input_fractional_knapsack)
     brute_force = fractional_knapsack.brute_force_solution(
         input_fractional_knapsack_copy
@@ -83,7 +85,9 @@ def test_stress_tests_efficient_solution_small_stress(input_fractional_knapsack)
     "input_fractional_knapsack",
     sample_input_fractional_knapsack(big_tests_params),
 )
-def test_stress_tests_efficient_solution_big_stress(input_fractional_knapsack):
+def test_stress_tests_efficient_solution_big_stress(
+    input_fractional_knapsack: Tuple[int, int, List[Item]]
+) -> None:
     input_fractional_knapsack_copy = copy.deepcopy(input_fractional_knapsack)
     efficient = fractional_knapsack.efficient_solution(input_fractional_knapsack)
     brute_force = fractional_knapsack.brute_force_solution(
@@ -100,7 +104,7 @@ def test_stress_tests_efficient_solution_big_stress(input_fractional_knapsack):
 @pytest.mark.parametrize(
     "input_fractional_knapsack", sample_input_fractional_knapsack(performance_params)
 )
-def test_performance(input_fractional_knapsack) -> None:
+def test_performance(input_fractional_knapsack: Tuple[int, int, List[Item]]) -> None:
     config_names = ["fractional_knapsack", "performance_tests"]
     performance_measures = read_config(PerformanceMeasures, config_names)
     input_fractional_knapsack_copy = copy.deepcopy(input_fractional_knapsack)
@@ -113,5 +117,4 @@ def test_performance(input_fractional_knapsack) -> None:
         input_fractional_knapsack,
     )
     times_faster = performance_measures.times_faster_efficient_to_brute_force
-
     assert times_faster * efficient_time < brute_force_time

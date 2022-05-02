@@ -1,15 +1,11 @@
-from dataclasses import dataclass
 from typing import List
 
 
-@dataclass
 class Item:
-    value: float
-    weight: int
-
-    @property
-    def fractional_value(self):
-        return self.value / self.weight
+    def __init__(self, value: float, weight: int) -> None:
+        self.value: float
+        self.weight: int
+        self.fractional_value: float = value / weight
 
     def __gt__(self, other):
         if not self._is_valid_operand(other):
