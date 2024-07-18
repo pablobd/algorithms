@@ -13,7 +13,6 @@ Fun with algorithms and data structures
 
 Have fun, learn about algorithms and data structures and build the fastest and cleanest algorithms from far west.
 
-
 ## Local Development
 
 Though, it's not a requirement, we encourage the usage of `pyenv`, a simple Python version management program, to select the right Python version (>=3.8,<4.0). You can follow the [Windows](https://github.com/pyenv-win/pyenv-win#installation) or the [macOS instructions](https://github.com/pyenv/pyenv#installation), both found in the official `pyenv` repository. Installation on Linux based systems is not so straightforward but it is also doable.
