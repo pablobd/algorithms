@@ -228,3 +228,39 @@ fractional_knapsack:
     repeat_performance_tests_per_input: 3
     number_performance_tests_per_input: 5
     times_faster_efficient_to_brute_force: 1000
+minimum_refueling_stops:
+  stress_tests:
+    small_tests:
+      max_fuel_stops: 100
+      min_fuel_stops: 2
+      max_distance_between_stops: 50
+      min_distance_between_stops: 10
+      max_tank_capacity: 100
+      min_tank_capacity: 20
+      max_distance_to_destination_from_last_stop: 100
+      min_distance_to_destination_from_last_stop: 50
+      test_iterations: 10
+    big_tests:
+      max_fuel_stops: 1000
+      min_fuel_stops: 200
+      max_distance_between_stops: 50
+      min_distance_between_stops: 10
+      max_tank_capacity: 100
+      min_tank_capacity: 20
+      max_distance_to_destination_from_last_stop: 100
+      min_distance_to_destination_from_last_stop: 50
+      test_iterations: 100
+    performance:
+      max_fuel_stops: 250000
+      min_fuel_stops: 240000
+      max_distance_between_stops: 50
+      min_distance_between_stops: 10
+      max_tank_capacity: 100
+      min_tank_capacity: 20
+      max_distance_to_destination_from_last_stop: 100
+      min_distance_to_destination_from_last_stop: 50
+      test_iterations: 1
+  performance_tests:
+    repeat_performance_tests_per_input: 2
+    number_performance_tests_per_input: 3
+    times_faster_efficient_to_brute_force: 1.05
